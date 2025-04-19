@@ -1,0 +1,24 @@
+def word_count(document):
+	num_words = len(document.split())
+
+	return num_words
+
+def char_count(document):
+	lowered_document = document.lower()
+	chars = {}
+	for char in lowered_document:
+		if char not in chars:
+			chars[char] = 1
+		else:
+			chars[char] += 1
+
+	return chars
+
+def report_doc(chars):
+	sorted_chars = {}
+	char_keys = list(chars.keys())
+	char_keys.sort()
+	for i in char_keys:
+		sorted_chars[i] = chars [i]
+
+	return sorted_chars
